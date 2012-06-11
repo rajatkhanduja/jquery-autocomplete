@@ -889,9 +889,9 @@
             $items.removeClass(this.selectClass_).removeClass(this.options.selectClass);
             if (typeof item === 'number') {
                 if (item < 0) {
-                    item = 0;
+                    item = $items.length + item;
                 } else if (item >= $items.length) {
-                    item = $items.length - 1;
+                    item = item % $items.length;
                 }
                 $item = $($items[item]);
             } else {
